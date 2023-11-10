@@ -45,14 +45,14 @@ void display(Node *dis) //Printing the Complete Linked List
     }
     printf("\n");
 }
-Node *insertbeg(Node *ins,int val)
+Node *insertbeg(Node *ins,int val) //Function To Add a node in Begining
 {
-    if(ins==NULL)
+    if(ins==NULL) //Checking if The Linked List Exist or Not
     {
         printf("List is Empty . \n");
         printf("First Insert Item . ");
     }
-    else
+    else //If The List Exist Creating a new node and inserting it
     {
         Node *new;
         new=(Node*)malloc(sizeof(Node));
@@ -75,8 +75,8 @@ int main()
     }
     display(head);
     int newvalue;
-    printf("Enter The Value To Insert :- ");
+    printf("Enter The Value To Insert :- "); //Taking the Value To Add in List
     scanf("%d",&newvalue);
-    head=insertbeg(head,newvalue);
+    head=insertbeg(head,newvalue); //Inserting it To List By The Mention Function
     display(head);
 }
