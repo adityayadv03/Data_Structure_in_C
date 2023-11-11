@@ -54,16 +54,16 @@ Node *insertend(Node *ins,int val) //Function To Add a node in Begining
     }
     else //If The List Exist Creating a new node and inserting it
     {
-        temp=ins;
+        temp=ins; //Using a Temp pointer of structure type to find last Node
         Node *new;
-        new=(Node*)malloc(sizeof(Node));
+        new=(Node*)malloc(sizeof(Node)); //Creating a new node 
         new->data=val;
         new->next=NULL;
-        while(temp->next!=NULL)
+        while(temp->next!=NULL) //finding the last Node as last node have NULL in the next pointer
         {
             temp=temp->next;
         }
-        temp->next=new;
+        temp->next=new; //adding the new node to the last
     }
     return ins;
 }
