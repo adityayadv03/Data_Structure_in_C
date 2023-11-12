@@ -54,7 +54,9 @@ Node *deletebeg(Node *ins) //Function To Delete a node in Begining
     }
     else //If The List Exist Deleting the First Node
     {
-        ins=ins->next;
+        temp=ins; //Storing the Completing Linked List
+        ins=ins->next; //Moving the Pointer to the next
+        free(temp); //Removing the Allocated first node from the memory
     }
     return ins;
 }
