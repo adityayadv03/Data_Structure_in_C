@@ -45,23 +45,23 @@ void display(Node *dis) //Printing the Complete Linked List
     }
     printf("\n");
 }
-Node *deleteend(Node *ins) //Function To Delete a node in Begining
+Node *deleteend(Node *ins) //Function To Delete a node in End
 {
     if(ins==NULL) //Checking if The Linked List Exist or Not
     {
         printf("List is Empty . \n");
         printf("First Insert Item . ");
     }
-    else //If The List Exist Deleting the First Node
+    else //If The List Exist Deleting the Last Node
     {
         temp=ins;
         Node *prev;
-        while(temp->next!=NULL)
+        while(temp->next!=NULL) //Running the Loop Till the last Last Node
         {
-            prev=temp;
-            temp=temp->next;
+            prev=temp; //Storing the Second last Node
+            temp=temp->next; //Moving the Pointer to Next Address
         }
-        prev->next=temp->next;
+        prev->next=temp->next; //Storing the last node next address(NULL) to the Second Last Node
         free(temp); //Removing the Allocated Last node from the memory
     }
     return ins;
