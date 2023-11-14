@@ -56,24 +56,24 @@ Node *insertafterno(Node *ins,int val,int afno) //Function To Add a node in Begi
     {
         int check=0;
         Node *new;
-        new=(Node*)malloc(sizeof(Node));
+        new=(Node*)malloc(sizeof(Node)); //Allocating Space to new Node
         new->data=val;
         new->next=NULL;
-        Node *prev=ins;
+        Node *prev=ins; //Creating two pointer to traverse and insert the two node
         temp=ins->next;
-        while(prev!=NULL)
+        while(prev!=NULL) //Traversing till the we reach the last node
         {
-            if(prev->data==afno)
+            if(prev->data==afno) //Checking for the Number after which we have to insert
             {
                 prev->next=new;
                 new->next=temp;
                 check=1;
-                break;
+                break; //Breaking after insertion so the number of iteration can be reduce
             }
             prev=temp;
             temp=temp->next;
         }
-        if(prev==NULL && check==0)
+        if(prev==NULL && check==0) //For the Condition if the number is not present in list
         {
             printf("The Number Enter is Not Present in The List . \n");
         }
