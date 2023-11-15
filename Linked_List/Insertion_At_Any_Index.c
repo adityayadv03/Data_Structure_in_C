@@ -9,10 +9,10 @@ struct node //Basic Structure of Each Node
 typedef struct node Node; //To use a Short Form
 Node *head; //Head Node
 Node *temp; //Temporary Node
-int countnode(Node *cou)
+int countnode(Node *cou) //Function To Count Number of Node
 {
     int co=0;
-    while(cou!=NULL)
+    while(cou!=NULL) //Running Till Finding the Last Node
     {
         co=co+1;
         cou=cou->next;
@@ -55,9 +55,9 @@ void display(Node *dis) //Printing the Complete Linked List
     }
     printf("\n");
 }
-Node *ins_ind(Node *ins)
+Node *ins_ind(Node *ins) //Function to Insert Node at any Index
 {
-    if(ins==NULL)
+    if(ins==NULL) //Checking whether Linked List Exist Or Not
     {
         printf("List is Empty . \n");
         printf("First Insert Item . \n");
@@ -65,33 +65,33 @@ Node *ins_ind(Node *ins)
     else
     {
         int in,val;
-        printf("Enter the Postion To Insert :- ");
+        printf("Enter the Postion To Insert :- "); //Taking Postion to Insert
         scanf("%d",&in);
-        in=in-1;
-        printf("Enter the Number To Insert :- ");
+        in=in-1; //Converting the position to index
+        printf("Enter the Number To Insert :- "); //Taking value to insert
         scanf("%d",&val);
-        int num=countnode(ins);
+        int num=countnode(ins); //Finding the Number of Nodes
         if(in>=0 && in<=num)
         {
             Node *new;
-            new=(Node*)malloc(sizeof(Node));
+            new=(Node*)malloc(sizeof(Node)); //Creating a Node
             new->data=val;
             new->next=NULL;
             Node *prev=ins;
             temp=ins;
-            for(int i=0 ; i<=num ; i++)
+            for(int i=0 ; i<=num ; i++) //Here we have use till smaller than equal to so that we can add node in last position
             {
-                if(in==0)
+                if(in==0) //Checking if we have to insert at the starting or not
                 {
                     new->next=ins;
                     ins=new;
                     break;
                 }
-                else if(i==in)
+                else if(i==in) //For any Other Index
                 {
                     new->next=temp;
                     prev->next=new;
-                    break;
+                    break; //Breaking the condition to reduce iteration 
                 }
                 prev=temp;
                 temp=temp->next;
@@ -99,7 +99,7 @@ Node *ins_ind(Node *ins)
         }
         else
         {
-            printf("Wrong Choice . \n");
+            printf("Wrong Choice . \n"); //if User enter Wrong index Printing a Meaningful Message
         }
     }
     return ins;
