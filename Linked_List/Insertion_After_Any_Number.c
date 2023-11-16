@@ -57,7 +57,7 @@ Node *insertafterno(Node *ins,int val,int afno) //Function To Add a node at afte
         int check=0;
         Node *new;
         new=(Node*)malloc(sizeof(Node)); //Allocating Space to new Node
-        new->data=val;
+        new->data=val; //Storing Val in data of New Node
         new->next=NULL;
         Node *prev=ins; //Creating two pointer to traverse and insert the two node
         temp=ins->next;
