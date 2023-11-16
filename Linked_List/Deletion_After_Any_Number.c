@@ -45,30 +45,25 @@ void display(Node *dis) //Printing the Complete Linked List
     }
     printf("\n");
 }
-Node *insertafterno(Node *ins,int val,int afno) //Function To Add a node at after any Number
+Node *deleteafterno(Node *ins,int afno) //Function To Delete a node After any Number
 {
     if(ins==NULL) //Checking if The Linked List Exist or Not
     {
         printf("List is Empty . \n");
         printf("First Insert Item . ");
     }
-    else //If The List Exist Creating a new node and inserting it
+    else //If The List Exist Deleting the Specified Node
     {
         int check=0;
-        Node *new;
-        new=(Node*)malloc(sizeof(Node)); //Allocating Space to new Node
-        new->data=val;
-        new->next=NULL;
         Node *prev=ins; //Creating two pointer to traverse and insert the two node
         temp=ins->next;
-        while(prev!=NULL) //Traversing till the we reach the last node
+        while(prev->next!=NULL) //Traversing till the we reach the last node
         {
-            if(prev->data==afno) //Checking for the Number after which we have to insert
+            if(prev->data==afno) //Checking for the Number after which we have to delete
             {
-                prev->next=new;
-                new->next=temp;
+                prev->next=temp->next;
                 check=1;
-                break; //Breaking after insertion so the number of iteration can be reduce
+                break; //Breaking after Delete so the number of iteration can be reduce
             }
             prev=temp;
             temp=temp->next;
@@ -91,12 +86,9 @@ int main()
         scanf("%d",&value);
         head=insert(head,value); //Adding the Value By Insert Function Declare Above
     }
-    display(head);
-    int newvalue,afterno;
-    printf("Enter The Value To Insert :- "); //Taking the Value To Add in List
-    scanf("%d",&newvalue);
-    printf("Enter Number After which You Want To Insert :- ");
+    int afterno;
+    printf("Enter Number After which You Want To Delete :- ");
     scanf("%d",&afterno);
-    head=insertafterno(head,newvalue,afterno); //Inserting it To List By The Mention Function
+    head=deleteafterno(head,afterno);
     display(head);
 }
