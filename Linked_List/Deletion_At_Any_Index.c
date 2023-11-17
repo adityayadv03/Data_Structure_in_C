@@ -65,23 +65,28 @@ Node *del_ind(Node *ins) //Function to Delete Node at any Index
     else
     {
         int in;
+        Node *rem; //Pointer to Remove the allocated Node memory
         printf("Enter the Postion To Delete :- "); //Taking Postion to Delete
         scanf("%d",&in);
         int num=countnode(ins); //Finding the Number of Nodes
-        if(in>=1 && in<=num)
+        if(in>=1 && in<=num) //Checking Whether the User Enter a Valid Position or Not
         {
-            Node *prev=ins;
+            Node *prev=ins; //Pointer to Traverse Through the Linked list
             temp=ins;
             for(int i=1 ; i<=num ; i++)
             {
-                if(in==1)
+                if(in==1) //Shifting The Pointer for the First Position
                 {
+                    rem=ins; //Pointing the Node To Remove From Memory
                     ins=ins->next;
+                    free(rem); //Deallocating Using Free
                     break;
                 }
-                else if(i==in)
+                else if(i==in) //For Other Position
                 {
+                    rem=temp; //Pointing the Node To Remove From Memory
                     prev->next=temp->next;
+                    free(rem); //Deallocating Using Free
                     break; //Breaking the condition to reduce iteration 
                 }
                 prev=temp;
