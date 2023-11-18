@@ -45,19 +45,19 @@ void display(Node *dis) //Printing the Complete Linked List
     }
     printf("\n");
 }
-Node *sort(Node *srt)
+Node *sort(Node *srt) //Function to Sort Linked List
 {
-    int temp;
-    Node *ptr1=srt;
+    int temp; //Variable to Swap
+    Node *ptr1=srt; //Pointer To Perform Sorting
     Node *ptr2;
     while(ptr1!=NULL)
     {
         ptr2=ptr1->next;
         while(ptr2!=NULL)
         {
-            if(ptr1->data>ptr2->data)
+            if(ptr1->data>ptr2->data) //Comparing the First Node data is Greater or Not
             {
-                temp=ptr1->data;
+                temp=ptr1->data; //Swapping if the Position is Wrong
                 ptr1->data=ptr2->data;
                 ptr2->data=temp;
             }
@@ -78,6 +78,6 @@ int main()
         scanf("%d",&value);
         head=insert(head,value); //Adding the Value By Insert Function Declare Above
     }
-    head=sort(head);
+    head=sort(head); //Calling the Function to Perform Sorting
     display(head);
 }
