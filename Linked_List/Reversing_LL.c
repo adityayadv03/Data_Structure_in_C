@@ -45,11 +45,11 @@ void display(Node *dis) //Printing the Complete Linked List
     }
     printf("\n");
 }
-Node *reverse(Node *rev)
+Node *reverse(Node *rev) //Function to Reverse The List
 {
-    Node *prev=NULL;
+    Node *prev=NULL; //Two Pointer to Connect List in Reverse Order
     Node *next=NULL;
-    while(rev!=NULL)
+    while(rev!=NULL) //Running the Loop To Cover the Complete List
     {
         next=rev->next;
         rev->next=prev;
