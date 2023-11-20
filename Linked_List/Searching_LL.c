@@ -45,23 +45,23 @@ void display(Node *dis) //Printing the Complete Linked List
     }
     printf("\n");
 }
-void search(Node *srh)
+void search(Node *srh) //Function To Search a Element In A Linked List
 {
     int n,check=0,count=0;
-    printf("Enter The Number To Search :- ");
+    printf("Enter The Number To Search :- "); //Taking The Number From User
     scanf("%d",&n);
-    while(srh!=NULL)
+    while(srh!=NULL) //Running the Loop Till To Traverse the Whole List
     {
-        count++;
-        if(srh->data==n)
+        count++; //Counting the Position of Traverse Node
+        if(srh->data==n) //Checking with each Element 
         {
-            printf("Element Found At %d . ",count);
+            printf("Element Found At %d . ",count); //if Element Found Printing its Position
             check=1;
             break;
         }
         srh=srh->next;
     }
-    if(srh==NULL && check==0)
+    if(srh==NULL && check==0) //If the Element is Not Found then Printing a Meaningful Message
     {
         printf("Element Not Found . ");
     }
