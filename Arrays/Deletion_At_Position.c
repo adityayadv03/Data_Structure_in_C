@@ -8,24 +8,24 @@ void display(int ar[],int n) //Function To Display the Array
         printf("%d ",ar[i]);
     }
 }
-void delete(int ar[],int n)
+void delete(int ar[],int n)//Function To delete a Element 
 {
     int po;
-    printf("Enter The Position To Delete :- ");
+    printf("Enter The Position To Delete :- "); //Taking The Position to Delete
     scanf("%d",&po);
-    po=po-1;
-    if(po<0 && po>=n)
+    po=po-1; //Coverting position to index
+    if(po<0 && po>=n) //Checking for Wrong Index/Position
     {
         printf("Wrong Position .\n");
     }
     else
     {
-        for(int i=po ; i<n-1 ; i++)
+        for(int i=po ; i<n-1 ; i++)//Shifting Element Towards right
         {
             ar[i]=ar[i+1];
         }
-        n=n-1;
-        display(ar,n);
+        n=n-1; //Decrementing The Size of Array By 1
+        display(ar,n); //Printing The Updated Array
     }
 }
 int main()
