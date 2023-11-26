@@ -78,6 +78,6 @@ int main()
         head=insert(head,value); //Adding the Value By Insert Function Declare Above
     }
     display(head);
-    head=deleteend(head); //Deletion at Begining By The Mention Function
+    head=deleteend(head); //Deletion at End By The Mention Function
     display(head);
 }
