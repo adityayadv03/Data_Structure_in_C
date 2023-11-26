@@ -1,5 +1,6 @@
 /*Author :- Aditya Yadav */
 #include<stdio.h>
+//Complete Code For Array Consisting All The Sub Program Mention in Array Folder
 void display(int ar[],int n) //Function To Display the Array
 {
     printf("Element Are :- ");
@@ -109,15 +110,15 @@ int main()
     {
         scanf("%d",&arr[i]);
     }
-    printf("1.Display . \n");
+    printf("1.Display . \n"); //Giving User Choice
     printf("2.Insertion At Any Position . \n");
     printf("3.Deletion At Any Position . \n");
     printf("4.Sorting Array . \n");
     printf("5.Searching In Array . \n");
-    printf("Enter Your Choice :- ");
+    printf("Enter Your Choice :- "); //Taking User Choice
     scanf("%d",&ch);
-    switch(ch)
-    {
+    switch(ch) //Checking Different Choice Using Switch Case
+    { //Calling Different Function According To Choice
         case 1:
             display(arr,n);
         break;
