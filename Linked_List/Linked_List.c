@@ -1,5 +1,5 @@
 /*Author :- Aditya Yadav */
-#include<stdio.h>
+#include<stdio.h> //A Menu Driven Program to Do All The Mention Task in Linked List Folder
 #include<stdlib.h> //Library To Use Malloc Function Its a Standard Library
 struct node //Basic Structure of Each Node
 {
@@ -298,8 +298,8 @@ int main()
 {
     int ch,newvalue;
     do
-    {
-        printf("0.Exit . \n");
+    { //Mention All Function Except Deletion and Insertion After Any Number as it is Not That Efficent
+        printf("0.Exit . \n"); //Insertion Can Be Done At First Position and First Element Cont be Deleted By these Function
         printf("1.Create A Linked List . \n");
         printf("2.Display Linked List . \n");
         printf("3.Insertion At Begining . \n");
