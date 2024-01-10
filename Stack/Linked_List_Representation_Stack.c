@@ -1,37 +1,37 @@
 /*Author :- Aditya Yadav */
 #include<stdio.h> //Stack is Represented by Linked list in the following Program
 #include<stdlib.h>
-struct node
+struct node //Basic Node To represent One Element Of Stack
 {
 	int data;
 	struct node *next;
 };
-typedef struct node Node;
-Node *top=NULL;
-void push(int val)
+typedef struct node Node; //Define a shortname to struct node as Node
+Node *top=NULL; //Initially the top is NULL and Stack is Empty
+void push(int val) //Function to Push any Value in the Stack
 {
-	struct node *newnode;
+	struct node *newnode; //Creating a Newnode
 	newnode=(Node *)malloc(sizeof(Node));
 	newnode->data=val;
-	if(top==NULL)
+	if(top==NULL) //If the Top is NULL then newnode fill be the first element and top value is the value of Newnode
 	{
 		newnode->next=NULL;
 		top=newnode;
 	}
-	else
+	else //Else we will add the newnode to the starting
 	{
 		newnode->next=top;
 		top=newnode;
 	}
 }
-void pop()
+void pop() //Function to Pop a Value from the Linked List
 {
 	int data;
-	if(top==NULL)
+	if(top==NULL) //Checking Whether the top value is NULL or Not if it is NULL The pop function cant be perform
 	{
 		printf("\nUnderflow . \n");
 	}
-	else
+	else //Else Removing the first Element of Stack
 	{
 		data=top->data;
 		printf("\nElement Deleted :- %d . \n",data);
@@ -39,22 +39,22 @@ void pop()
 	}
 	printf("\n");
 }
-int peek()
+int peek() //Function to See the Value of the Top element in Stack
 {
-	if(top==NULL)
+	if(top==NULL) //If the Stack is Already Empty then returning -1
 	{
 		return -1;
 	}
-	else
+	else //Else returning the top Value
 	{
 		return top->data;
 	}
 }
-void display()
+void display() //Function to Display all the element present in stack
 {
 	Node *temp;
 	temp=top;
-	if(temp!=NULL)
+	if(temp!=NULL) //If Top is Not NULL then only the Value can be printed
 	{
 		printf("\nElement Of Stack :- ");
 		while(temp!=NULL)
@@ -64,25 +64,25 @@ void display()
 		}
 		printf("\n");
 	}
-	else
+	else //if the top is Null then printing a appropriate message
 	{
 		printf("\nStack is Empty . \n");
 	}
 	printf("\n");
 }
-int main()
+int main() //Main Function to Make a Menu Driven Program and calling the above functions Correctly
 {
 	int value,ch;
-	do
+	do //Using Do while Loop
 	{
 		printf("1.Push . \n");
 		printf("2.Pop . \n");
 		printf("3.Peek . \n");
 		printf("4.Display . \n");
 		printf("5.Exit .\n");
-		printf("Enter the Choice :- ");
+		printf("Enter the Choice :- "); //Taking User Choice For the above menu
 		scanf("%d",&ch);
-		switch(ch)
+		switch(ch) //Using Switch Case to Call the Right Function
 		{
 			case 1:
 				printf("Enter the Value To Push :- ");
