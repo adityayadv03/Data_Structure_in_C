@@ -40,24 +40,24 @@ void createBST(Node* root,int val) //Function to insert a Newnode in the Binary 
         prev->right=newnode;
     }
 }
-int search(Node *root,int val)
-{
-    while(root!=NULL)
+int search(Node *root,int val) //Creating the Function to Check whether the Number Occur in the Binary Search Tree or Not
+{ //The Function will return 1 if the element is present and 0 if it is not
+    while(root!=NULL) //Traversing the whole tree till we find its end
     {
-        if(val==root->data)
+        if(val==root->data) //Checking whether the root has the data we are finding for or not
         {
-            return 1;
+            return 1; //If the Element is Found
         }
-        else if(val<root->data)
+        else if(val<root->data) //If Element is not found in the root node Changing the Root Node Accordingly 
         {
-            root=root->left;
+            root=root->left; //if the Number is Smaller than root value then checking the left sub tree
         }
         else
         {
-            root=root->right;
+            root=root->right; //if the Number is Greater than root value then checking the Right sub tree
         }
     }
-    return 0;
+    return 0; //If the whole tree is traverse and the element is not present then returning 0
 }
 int main()
 {
@@ -76,14 +76,14 @@ int main()
         scanf("%d",&ele);
         createBST(root,ele);
     }
-    printf("Enter The Number to Search :- ");
+    printf("Enter The Number to Search :- "); //Taking the Number to find in the tree
     scanf("%d",&find);
-    if(search(root,find)==1)
+    if(search(root,find)==1) //Passing in the function
     {
-        printf("Number Found . ");
+        printf("Number Found . "); //if the function return 1 then printing the message that Number is Present
     }
     else
     {
-        printf("Number Not Found .");
+        printf("Number Not Found ."); //If the Function return 0 then printing that Number is Not Present
     }
 }
